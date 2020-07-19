@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.tommyadmin.common.security.mapper.MenuMapper">
+    <resultMap id="BaseMenuResultMap" type="io.github.tommyadmin.common.security.entity.Menu">
+        <id column="id" property="id"/>
+        <result column="menu_name" property="menuName"/>
+        <result column="permission" property="permission"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    id, menu_name, permission
+    </sql>
+
+</mapper>
