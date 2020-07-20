@@ -1,4 +1,4 @@
-package io.github.tommyadmin.common.security;
+package io.github.tommyadmin.common.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +8,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Optional;
 
+/**
+ * @author Tommy
+ * @since 2020-07-20
+ */
 public class SecurityUtils {
 
     private static final Logger LOG = LoggerFactory.getLogger(SecurityUtils.class);

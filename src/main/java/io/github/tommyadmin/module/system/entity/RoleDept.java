@@ -1,4 +1,4 @@
-package io.github.tommyadmin.common.security.entity;
+package io.github.tommyadmin.module.system.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

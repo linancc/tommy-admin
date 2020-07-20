@@ -1,4 +1,4 @@
-package io.github.tommyadmin.common.security.entity;
+package io.github.tommyadmin.module.system.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -6,12 +6,12 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName("sys_role_menu")
-public class RoleMenu {
+@TableName("sys_role")
+public class Role {
 
     @TableId(type = IdType.AUTO)
-    private Long roleId;
+    private Long id;
 
-    @TableId(type = IdType.AUTO)
-    private Long menuId;
+    private String roleName;
+
 }

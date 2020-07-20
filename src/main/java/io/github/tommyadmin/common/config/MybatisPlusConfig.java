@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableTransactionManagement
 @Configuration
-@MapperScan("io.github.tommyadmin.common.security.mapper*")
+@MapperScan("io.github.tommyadmin.module.system.mapper*")
 public class MybatisPlusConfig {
 
     @Bean

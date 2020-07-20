@@ -1,12 +1,12 @@
-package io.github.tommyadmin.common.security.controller;
+package io.github.tommyadmin.module.system.controller;
 
+import com.baomidou.mybatisplus.extension.api.R;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.github.tommyadmin.common.security.entity.vo.LoginVO;
-import io.github.tommyadmin.common.security.jwt.JWTFilter;
 import io.github.tommyadmin.common.security.jwt.TokenProvider;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import io.github.tommyadmin.module.system.entity.vo.LoginVO;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
@@ -33,7 +33,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<JWTToken> authorize(@RequestBody LoginVO loginVO) {
+    public R<JWTToken> authorize(@RequestBody LoginVO loginVO) {
 
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(loginVO.getUsername(), loginVO.getPassword());
@@ -44,30 +44,17 @@ public class AuthenticationController {
         boolean rememberMe = (loginVO.isRememberMe() == null) ? false : loginVO.isRememberMe();
         String jwt = tokenProvider.createToken(authentication, rememberMe);
 
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add(JWTFilter.AUTHORIZATION_HEADER, "Bearer " + jwt);
-
-        return new ResponseEntity<>(new JWTToken(jwt), httpHeaders, HttpStatus.OK);
+        return R.ok(new JWTToken(jwt));
     }
 
     /**
      * Object to return as body in JWT Authentication.
      */
+    @Getter
+    @Setter
+    @AllArgsConstructor
     static class JWTToken {
 
-        private String idToken;
-
-        JWTToken(String idToken) {
-            this.idToken = idToken;
-        }
-
-        @JsonProperty("id_token")
-        String getIdToken() {
-            return idToken;
-        }
-
-        void setIdToken(String idToken) {
-            this.idToken = idToken;
-        }
+        private String token;
     }
 }

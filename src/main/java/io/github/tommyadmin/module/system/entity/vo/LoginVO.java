@@ -1,4 +1,4 @@
-package io.github.tommyadmin.common.security.entity.vo;
+package io.github.tommyadmin.module.system.entity.vo;
 
 /**
  * DTO for storing a user's credentials.
