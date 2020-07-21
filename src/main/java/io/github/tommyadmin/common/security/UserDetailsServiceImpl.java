@@ -51,7 +51,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (!user.isActive()) {
             throw new UserNotActivatedException("User " + lowercaseLogin + " was not activated");
         }
-        Set<GrantedAuthority> grantedAuthorities = menuMapper.selectMenuPermsByUserId(user.getId()).stream()
+        Set<GrantedAuthority> grantedAuthorities = menuMapper.selectPermissionByUserId(user.getId()).stream()
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toSet());
         return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(), grantedAuthorities);

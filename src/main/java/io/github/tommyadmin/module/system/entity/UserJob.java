@@ -9,7 +9,6 @@ import lombok.Data;
 @TableName("sys_user_job")
 public class UserJob {
 
-    @TableId(type = IdType.AUTO)
     private Long userId;
 
     @TableId(type = IdType.AUTO)

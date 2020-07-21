@@ -9,6 +9,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Optional;
 
 /**
+ * 获取当前用户
+ *
  * @author Tommy
  * @since 2020-07-20
  */

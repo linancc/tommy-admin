@@ -9,7 +9,6 @@ import lombok.Data;
 @TableName("sys_menu")
 public class Menu {
 
-    @TableId(type = IdType.AUTO)
     private Long id;
 
     private String menuName;

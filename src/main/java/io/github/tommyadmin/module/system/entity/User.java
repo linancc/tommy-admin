@@ -13,7 +13,6 @@ import java.util.Set;
 @TableName("sys_user")
 public class User {
 
-    @TableId(type = IdType.AUTO)
     private Long id;
 
     private String userName;

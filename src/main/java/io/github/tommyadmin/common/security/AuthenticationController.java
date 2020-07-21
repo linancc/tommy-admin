@@ -1,4 +1,4 @@
-package io.github.tommyadmin.module.system.controller;
+package io.github.tommyadmin.common.security;
 
 import com.baomidou.mybatisplus.extension.api.R;
 import com.fasterxml.jackson.annotation.JsonProperty;

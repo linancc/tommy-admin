@@ -10,7 +10,6 @@ import lombok.Data;
 @TableName("sys_job")
 public class Job {
 
-    @TableId(type = IdType.AUTO)
     private Long id;
 
     private String jobname;

@@ -9,7 +9,6 @@ import lombok.Data;
 @TableName("sys_role")
 public class Role {
 
-    @TableId(type = IdType.AUTO)
     private Long id;
 
     private String roleName;

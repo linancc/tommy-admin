@@ -11,7 +11,7 @@
     id, menu_name, permission
     </sql>
 
-    <select id="selectMenuPermsByUserId" parameterType="long" resultType="string">
+    <select id="selectPermissionByUserId" parameterType="long" resultType="string">
         SELECT DISTINCT
         m.permission
         FROM

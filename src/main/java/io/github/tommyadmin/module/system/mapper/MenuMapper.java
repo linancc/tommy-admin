@@ -9,5 +9,11 @@ import java.util.Set;
 @Repository
 public interface MenuMapper extends BaseMapper<Menu> {
 
-    Set<String> selectMenuPermsByUserId(Long id);
+    /**
+     * 根据用户 id 查询菜单权限
+     *
+     * @param id 用户 id
+     * @return 权限 Set
+     */
+    Set<String> selectPermissionByUserId(Long id);
 }

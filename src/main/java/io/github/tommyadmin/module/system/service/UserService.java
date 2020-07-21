@@ -8,4 +8,5 @@ import io.github.tommyadmin.module.system.entity.User;
  * @since 2020-07-20
  */
 public interface UserService extends IService<User> {
+
 }

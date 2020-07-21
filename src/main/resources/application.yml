@@ -11,6 +11,9 @@ server:
 mybatis-plus:
   global-config:
     banner: false
+    # 全局默认主键类型
+    db-config:
+      id-type: auto
 
 jwt:
   header: Authorization
