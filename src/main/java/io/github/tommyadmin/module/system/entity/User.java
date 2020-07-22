@@ -1,17 +1,15 @@
 package io.github.tommyadmin.module.system.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import io.github.tommyadmin.common.BaseEntity;
 import lombok.Data;
-
-import java.util.HashSet;
-import java.util.Set;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @TableName("sys_user")
-public class User {
+public class User extends BaseEntity {
 
     private Long id;
 
