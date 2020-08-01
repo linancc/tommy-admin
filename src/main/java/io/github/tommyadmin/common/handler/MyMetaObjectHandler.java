@@ -3,7 +3,6 @@ package io.github.tommyadmin.common.handler;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import io.github.tommyadmin.common.util.SecurityUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.security.SecurityUtil;
 import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.stereotype.Component;
 

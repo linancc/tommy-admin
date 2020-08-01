@@ -1,7 +1,6 @@
 package io.github.tommyadmin.common.security;
 
 import com.baomidou.mybatisplus.extension.api.R;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.tommyadmin.common.security.jwt.TokenProvider;
 import io.github.tommyadmin.module.system.entity.vo.LoginVO;
 import lombok.AllArgsConstructor;
@@ -41,7 +40,7 @@ public class AuthenticationController {
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        boolean rememberMe = (loginVO.isRememberMe() == null) ? false : loginVO.isRememberMe();
+        boolean rememberMe = loginVO.isRememberMe() != null && loginVO.isRememberMe();
         String jwt = tokenProvider.createToken(authentication, rememberMe);
 
         return R.ok(new JWTToken(jwt));
